@@ -17,6 +17,6 @@ const fs= require("fs");
 //             console.log(result);
 //         }
 // })
-fs.appendFileSync("./text.txt" , new Date().getDate().toLocaleString());
+fs.appendFileSync("./text.txt" ,`${Date.now()}hey there\n`);
 
 
