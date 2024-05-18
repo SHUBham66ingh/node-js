@@ -23,7 +23,7 @@ fs.appendFileSync("./text.txt" ,`${Date.now()}hey there\n`);
 
 // fs.unlinkSync("./copy.txt");
 console.log(fs.statSync('./text.txt'));
-fs.mkdirSync("my-docs/a");
+
 
 
 
