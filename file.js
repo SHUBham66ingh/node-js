@@ -19,7 +19,10 @@ const fs= require("fs");
 // })
 fs.appendFileSync("./text.txt" ,`${Date.now()}hey there\n`);
 
-fs.cpSync("./text.txt" , "./copy.txt");
+// fs.cpSync("./text.txt" , "./copy.txt");
+
+fs.unlinkSync("./copy.txt");
+console.log(fs.statSync('./text.txt'));
 
 
 
