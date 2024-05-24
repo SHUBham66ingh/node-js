@@ -1,9 +1,9 @@
 const http = require("http");
 
 const myServer = http.createServer((req , res)=>{
-    console.log("new request recieved");
+    console.log(req.headers);
     res.end('hello from server')
 });
 
-myServer.listen(8000 , ()=> console.log("server started"));
+myServer.listen(8002 , ()=> console.log("server started"));
 
