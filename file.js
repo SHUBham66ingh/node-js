@@ -1,9 +1,11 @@
 const fs= require("fs");
 // sync..
 // fs.writeFileSync('./text.txt',"hello world");
-//
+
+
 // async
 // fs.writeFile('./text.txt',"hello world async",(err)=>{})
+
 
 // const result=fs.readFileSync("./contact.txt" , "utf-8");
 // // console.log(result);
