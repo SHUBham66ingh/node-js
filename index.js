@@ -11,6 +11,10 @@ app.get('/about' , (req,res)=>{
     return res.send (`hello , ${req.query.name}`); 
 })
 
+app.get('/profile' , (req,res)=>{
+ return res.send("profile page");
+})
+
 app.listen(8005,()=>{
     console.log("server started");
 })
