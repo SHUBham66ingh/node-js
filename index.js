@@ -13,8 +13,8 @@ fs.appendFile("log.txt", log , (err,data)=>{
         case'/': res.end('home page'); 
         break;
         case'/about':
-        const username=myUrl.query.myname
-        res.end("hi, ${username}");
+        const username=myUrl.query.myname;
+        res.end(`hi,${username}`);
         break;
         default:
             res.end("404 not found");
