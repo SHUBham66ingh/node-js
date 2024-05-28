@@ -19,7 +19,6 @@ fs.appendFile("log.txt", log , (err,data)=>{
         default:
             res.end("404 not found");
     }
-    
 });
 });
 myServer.listen(8004 , ()=> console.log("server started"));
