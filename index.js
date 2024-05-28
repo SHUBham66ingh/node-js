@@ -11,6 +11,10 @@ app.get('/about' , (req,res)=>{
     return res.send (`hello , ${req.query.name}`); 
 })
 
+app.listen(8005,()=>{
+    console.log("server started");
+})
+
 
 // let myServer = http.createServer((req , res)=>{
 //     if(req.url==="/favicon.ico") return res.end();
@@ -32,6 +36,6 @@ app.get('/about' , (req,res)=>{
 // });
 // });
 
-const myServer=http.createServer(app);
-myServer.listen(8005 , ()=> console.log("server started"));
+// const myServer=http.createServer(app);
+// myServer.listen(8005 , ()=> console.log("server started"));
 
