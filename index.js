@@ -8,7 +8,7 @@ app.get('/' , (req,res)=>{
 });
 
 app.get('/about' , (req,res)=>{
-    return res.send("hello from About page " + 'hey' + req.query.name + 'you are' + req.query.age) ; 
+    return res.send (`hello , ${req.query.name}`); 
 })
 
 
