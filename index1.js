@@ -3,7 +3,7 @@ const fs = require('fs')
 const users = require('./MOCK_DATA.json');
 
 const app=express();
-const PORT=8002;
+const PORT=8003;
 
 app.use(express.urlencoded({extended:false}))
 
@@ -14,7 +14,7 @@ app.use(( req,res,next)=>{
 
 app.use(( req,res,next)=>{
     console.log("hello from middleware 2")
-      return res.end("hey")
+      next();
 })
 
 
