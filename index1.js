@@ -3,7 +3,7 @@ const fs = require('fs')
 const users = require('./MOCK_DATA.json');
 
 const app=express();
-const PORT=8008;
+const PORT=8000;
 
 app.use(express.urlencoded({extended:false}))
 
@@ -46,6 +46,10 @@ app.route('/api/users/:id').get((req,res)=>{
 
 app.post('/api/users' , (req,res)=>{
     const body= req.body
+    if(!body||!body.first_name || !body.email||!body.gender|| !body.job_title|| !body.last_name )
+      {
+        return res.status(400).jason({msg:"ALL FIELDS ARE REQUIRED"})
+      }
     users.push({...body, id: users.length + 1});
     fs.writeFile('./MOCK_DATA.json', JSON.stringify(users) , (err,data)=>{
         return  res.status(201).json({status:"success",id:users.length});
