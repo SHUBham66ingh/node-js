@@ -16,6 +16,7 @@ app.use(( req,res,next)=>{
 
 
 app.get('/api/users'  , (req,res)=>{
+console.log(req.headers);
     return res.json(users);
 })
 
