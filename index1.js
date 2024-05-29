@@ -32,7 +32,13 @@ const userSchema = new mongoose.Schema({
   geneder:{
     type:String,
   },
-})
+},
+{
+  timestamps:true
+}
+);
+
+
 
 const User=mongoose.model('user' ,userSchema);
 
@@ -87,13 +93,15 @@ app.post('/api/users' , async(req,res)=>{
     //     return  res.status(201).json({status:"success",id:users.length});
     // })
  //create new user
- await User.create({
+ const result= await User.create({
    fisrtName:body.first_name ,
-   lastName:
-   
-    
+   lastName:body.job_title,
+   email:body.email,
+   gender:body.gender,
+   jobTitle:body.job_title
  })
 
+ return res.status(201).json({msg:'success'});
 })
 
 app.listen(PORT, ()=>{
