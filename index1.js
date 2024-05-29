@@ -16,7 +16,7 @@ app.use(( req,res,next)=>{
 
 
 app.get('/api/users'  , (req,res)=>{
-console.log(req.headers);
+    res.setHeader("X-Myname" , "shubham singh")
     return res.json(users);
 })
 
