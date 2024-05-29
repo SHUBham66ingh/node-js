@@ -12,6 +12,12 @@ app.use(( req,res,next)=>{
      next();
 })
 
+app.use(( req,res,next)=>{
+    console.log("hello from middleware 2")
+      return res.end("hey")
+})
+
+
 app.get('/api/users'  , (req,res)=>{
     return res.json(users);
 })
