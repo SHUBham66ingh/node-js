@@ -5,6 +5,8 @@ const users = require('./MOCK_DATA.json');
 const app=express();
 const PORT=8002;
 
+app.use(express)
+
 app.get('/api/users'  , (req,res)=>{
     return res.json(users);
 })
@@ -34,8 +36,10 @@ app.route('/api/users/:id').get((req,res)=>{
 
 
 app.post('/api/users' , (req,res)=>{
+    const body= req.body
+    console.log('body' , body)
     //create new user
-    return  req.json({status:"pending"});
+    return  res.json({status:"pending"});
 })
 
 app.listen(PORT, ()=>{
