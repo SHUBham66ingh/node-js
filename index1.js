@@ -25,6 +25,10 @@ app.get('/api/users/:id' , (req,res)=>{
 
 })
 
+app.post('/api/users' , (req,res)=>{
+    
+})
+
 
 app.listen(PORT, ()=>{
     console.log(`server started at port : ${PORT}`);
