@@ -18,6 +18,9 @@ app.get('/users' , (req,res)=>{
    res.send(html);
 })
 
+app.route('/api/users/:id').get()
+
+
 app.get('/api/users/:id' , (req,res)=>{
     const id= Number(req.params.id);
      const user=users.find(user=>user.id===id) ;
@@ -26,9 +29,9 @@ app.get('/api/users/:id' , (req,res)=>{
 })
 
 app.post('/api/users' , (req,res)=>{
-    
+    //create new user
+    return  req.json({status:"pending"});
 })
-
 
 app.listen(PORT, ()=>{
     console.log(`server started at port : ${PORT}`);
