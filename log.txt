@@ -22,3 +22,7 @@
 ::1 :GET: /api/users
 ::1 :POST: /api/users
 ::1 :POST: /api/userss
+::1 :POST: /api/users/22
+::1 :GET: /api/users/22
+::1 :GET: /api/users/22000000
+::1 :GET: /api/users/22000000
