@@ -1,5 +1,5 @@
 const express=require('express');
-
+const fs = require('fs')
 const users = require('./MOCK_DATA.json');
 
 const app=express();
@@ -37,9 +37,11 @@ app.route('/api/users/:id').get((req,res)=>{
 
 app.post('/api/users' , (req,res)=>{
     const body= req.body
-    
-    //create new user
-    return  res.json({status:"pending"});
+    users.push({...body, id: users.length + 1});
+    fs.writeFile('./MOCK_DATA.json', JSON.stringify(users) , (err,data)=>{
+        return  res.json({status:"pending"});
+    })
+ //create new user
 })
 
 app.listen(PORT, ()=>{

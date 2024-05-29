@@ -7998,5 +7998,13 @@
         "email": "gfollingrr@theguardian.com",
         "gender": "Female",
         "job_title": "Financial Advisor"
+    },
+    {
+        "first_name": "shubham",
+        "last_name": "singh",
+        "email": "shubham1041singh@gmail.com",
+        "gender": "male",
+        "job_title": "full stack developer",
+        "id": 1001
     }
 ]
