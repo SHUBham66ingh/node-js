@@ -3,7 +3,7 @@ const fs = require('fs')
 const users = require('./MOCK_DATA.json');
 
 const app=express();
-const PORT=8003;
+const PORT=8008;
 
 app.use(express.urlencoded({extended:false}))
 
@@ -48,7 +48,7 @@ app.post('/api/users' , (req,res)=>{
     const body= req.body
     users.push({...body, id: users.length + 1});
     fs.writeFile('./MOCK_DATA.json', JSON.stringify(users) , (err,data)=>{
-        return  res.json({status:"success",id:users.length});
+        return  res.status(201).json({status:"success",id:users.length});
     })
  //create new user
 })
