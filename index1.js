@@ -57,7 +57,9 @@ app.get('/api/users'  ,(req,res)=>{
     return res.json(users);
 })
 
-app.get('/users' , async(req,res)=>{
+
+app.
+get('/users' , async(req,res)=>{
   const allDbUsers = await User.find({});
     const html=`
    <ul>
@@ -67,6 +69,8 @@ app.get('/users' , async(req,res)=>{
    `;
    res.send(html);
 })
+
+
 
 app.route('/api/users/:id').get((req,res)=>{
     const id= Number(req.params.id);
