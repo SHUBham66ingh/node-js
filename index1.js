@@ -4,7 +4,7 @@ const fs = require('fs')
 const mongoose = require("mongoose");
 
 const app=express();
-const PORT=8000;
+const PORT=8009;
 
 //schema....
 mongoose.connect
@@ -53,10 +53,11 @@ app.use(( req,res,next)=>{
 })
 
 
-app.get('/api/users'  ,(req,res)=>{
-    res.setHeader("X-Myname" , "shubham singh")
-    return res.json(users);
+app.get('/api/users'  , async(req,res)=>{
+    const allDbUsers = await User.find({});
+    return res.json(allDbusers);
 })
+
 
 
 app.
@@ -73,14 +74,13 @@ get('/users' , async(req,res)=>{
 
 
 
-app.route('/api/users/:id').get((req,res)=>{
-    const id= Number(req.params.id);
-     const user=users.find(user=>user.id===id) ;
+app.route('/api/users/:id').get(async(req,res)=>{
+      const user = await User.findById(req.params.id)
      if(!user) return res.status(404).json({ error: "user not found"})
      return res.json(user);
 
 }).patch((req,res)=>{
-    //edit user with id
+    await User.findByIdAndUpdate(req.params.id  , {lastName :'Changed'});
   return  res.json({status:'pending'})
 })
 .delete((req,res)=>{

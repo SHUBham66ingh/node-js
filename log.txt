@@ -36,3 +36,8 @@
 ::1 :GET: /api/users/
 ::1 :GET: /users
 ::1 :POST: /api/users
+::1 :POST: /users
+::1 :GET: /users
+::1 :GET: /users
+::1 :GET: /users
+::1 :GET: /users
