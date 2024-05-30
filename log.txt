@@ -29,3 +29,8 @@
 ::1 :POST: /api/users
 ::1 :POST: /api/users
 ::1 :POST: /api/users
+::1 :GET: /api/users/
+::1 :GET: /api/users/
+::1 :GET: /api/users/
+::1 :GET: /api/users/
+::1 :GET: /api/users/

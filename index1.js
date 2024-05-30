@@ -1,6 +1,6 @@
 const express=require('express');
 const fs = require('fs')
-const users = require('./MOCK_DATA.json');
+// const users = require('./MOCK_DATA.json');
 const mongoose = require("mongoose");
 
 const app=express();
@@ -52,15 +52,17 @@ app.use(( req,res,next)=>{
 })
 
 
-app.get('/api/users'  , (req,res)=>{
+app.get('/api/users'  ,(req,res)=>{
     res.setHeader("X-Myname" , "shubham singh")
     return res.json(users);
 })
 
-app.get('/users' , (req,res)=>{
+app.get('/users' , async(req,res)=>{
+  const allDbUsers = await User.find({});
     const html=`
    <ul>
-     ${users.map( users=>`<li>${users.first_name} </li>`).join("")}
+     ${
+    allDbUsers users.map( users=>`<li>${user.firstName} - ${user.email} </li>`).join("")}
    </ul>
    `;
    res.send(html);
