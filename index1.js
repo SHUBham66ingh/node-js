@@ -81,11 +81,11 @@ app.route('/api/users/:id').get(async(req,res)=>{
 
 }).patch( async(req,res)=>{
     await User.findByIdAndUpdate(req.params.id  , {lastName :'Changed'});
-  return  res.json({status:'pending'})
+  return  res.json({status:'Success'})
 })
-.delete((req,res)=>{
- //delete user with id
- return  res.json({status:'pending'})
+.delete( async(req,res)=>{
+  await User.findByIdAndDelete(req.params.id)
+ return  res.json({status:'success'})
 })
 
 
