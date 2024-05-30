@@ -65,7 +65,7 @@ get('/users' , async(req,res)=>{
     const html=`
    <ul>
      ${
-    allDbUsers users.map( users=>`<li>${user.firstName} - ${user.email} </li>`).join("")}
+    allDbUsersUsers.map( users=>`<li>${user.firstName} - ${user.email} </li>`).join("")}
    </ul>
    `;
    res.send(html);
