@@ -79,7 +79,7 @@ app.route('/api/users/:id').get(async(req,res)=>{
      if(!user) return res.status(404).json({ error: "user not found"})
      return res.json(user);
 
-}).patch((req,res)=>{
+}).patch( async(req,res)=>{
     await User.findByIdAndUpdate(req.params.id  , {lastName :'Changed'});
   return  res.json({status:'pending'})
 })
