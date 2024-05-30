@@ -13,35 +13,6 @@ mongoose.connect
 .catch((err)=> console.log('mongo error' ,err))
 
 // schema
-const userSchema = new mongoose.Schema({
-  fisrtName :{
-    type:String,
-    required:true,
-  },
-  lastName:{
-    type:String,
-    required:false,
-  },
-  email:{
-    type:String,
-     required:true,
-     unique:true,
-  },
-  jobTitle:{
-    type:String,
-  },
-  geneder:{
-    type:String,
-  },
-},
-{
-  timestamps:true
-}
-);
-
-
-
-const User=mongoose.model('user' ,userSchema);
 
 app.use(express.urlencoded({extended:false}))
 
