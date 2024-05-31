@@ -1,10 +1,13 @@
 const express=require('express');
 const {connectMongoDb} = require('./connections')
 const {logReqRes} = require('./middlewares')
-const userRouter = require('./routes/user')
+const userRouter = require('./routes/user');
+const { default: mongoose } = require('mongoose');
 const app=express();
 const PORT=8009;
-connectMongoDb('mongodb://127.0.0.1:27017/youtube-app-1')
+
+mongoose.connect
+('mongodb://127.0.0.1:27017/youtube-app-1')
 .then(()=>console.log('MongoDb connected!'))
 .catch((err) => console.log(err));
 
