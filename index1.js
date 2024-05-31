@@ -1,8 +1,8 @@
 const express=require('express');
 const fs = require('fs')
-// const users = require('./MOCK_DATA.json');
 const mongoose = require("mongoose");
 
+const userRouter = require('./routes/user')
 const app=express();
 const PORT=8009;
 
@@ -78,6 +78,8 @@ app.post('/api/users' , async(req,res)=>{
    
     return res.status(201).json({msg:'success'});
   })
+
+
    
    
    
