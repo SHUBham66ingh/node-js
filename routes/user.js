@@ -1,5 +1,5 @@
 const express = require('express');
-
+const {handleGetAllUsers}= require('../controllers/users')
 const router = express.Router();
 
 
