@@ -1,5 +1,5 @@
 const express = require('express');
-const {handleGetAllUsers,handleGetAllUsersById}= require('../controllers/users');
+const {handleGetAllUsers,handleGetUsersById,handleUpdateUserById }= require('../controllers/users');
 const { getUserById } = require('../controllers/user');
 const router = express.Router();
 
@@ -11,10 +11,7 @@ router.get("/" , handleGetAllUsers ,);
 router
 .route('/:id')
 .get(handleGetAllUsersById)
-.patch( async(req,res)=>{
-    await User.findByIdAndUpdate(req.params.id  , {lastName :'Changed'});
-  return  res.json({status:'Success'})
-})
+.patch(handleUpdateUserById)
 .delete( async(req,res)=>{
   await User.findByIdAndDelete(req.params.id)
  return  res.json({status:'success'})
