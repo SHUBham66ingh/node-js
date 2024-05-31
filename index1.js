@@ -66,23 +66,19 @@ app.post('/api/users' , async(req,res)=>{
       {
         return res.status(400).jason({msg:"ALL FIELDS ARE REQUIRED"})
       }
-    // users.push({...body, id: users.length + 1});
-    // fs.writeFile('./MOCK_DATA.json', JSON.stringify(users) , (err,data)=>{
-    //     return  res.status(201).json({status:"success",id:users.length});
-    // })
- //create new user
- const result= await User.create({
-   fisrtName:body.first_name ,
-   lastName:body.job_title,
-   email:body.email,
-   gender:body.gender,
-   jobTitle:body.job_title
- })
+    
 
- return res.status(201).json({msg:'success'});
-})
+  const result= await User.create({
+      fisrtName:body.first_name ,
+      lastName:body.job_title,
+      email:body.email,
+      gender:body.gender,
+      jobTitle:body.job_title
+    });
+   
+    return res.status(201).json({msg:'success'});
+  })
+   
+   
+   
 
-app.listen(PORT, ()=>{
-    console.log(`server started at port : ${PORT}`);
-
-})
