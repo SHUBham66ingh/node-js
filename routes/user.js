@@ -1,19 +1,14 @@
 const express = require('express');
-const {handleGetAllUsers}= require('../controllers/users')
+const {handleGetAllUsers,getUserById}= require('../controllers/users');
+const { getUserById } = require('../controllers/user');
 const router = express.Router();
 
 
 
-router.get('/'  , async(req,res)=>{
-    const allDbUsers = await User.find({});
-    return res.json(allDbusers);
-})
+router.get("/" , handleGetAllUsers ,);
 
 
-router.route('/:id').get(async(req,res)=>{
-      const user = await User.findById(req.params.id)
-     if(!user) return res.status(404).json({ error: "user not found"})
-     return res.json(user);
+router.route('/:id').get(async(req,res)=>{ 
 
 }).patch( async(req,res)=>{
     await User.findByIdAndUpdate(req.params.id  , {lastName :'Changed'});
