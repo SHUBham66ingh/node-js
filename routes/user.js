@@ -10,5 +10,5 @@ router
 .patch(handleUpdateUserById)
 .delete(handleDeleteUserById)
  
- module.exports = router
+ module.exports = router;
   
