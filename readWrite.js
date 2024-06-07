@@ -19,6 +19,5 @@ fs.writeFile('output.txt' , "hello students"  , err=>{
         {
             return console.log(err)
         }
-
-        console.log("written successfully");
+console.log("written successfully");
 })
